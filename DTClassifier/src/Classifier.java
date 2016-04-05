@@ -12,6 +12,9 @@ public class Classifier {
 		// Calculate purity
 		String[] attribs = dataset.getAttribs();
 		ArrayList<Instance> instances = dataset.getInstances();
+		String bestAttrib = "";
+		double bestPurity = Double.MAX_VALUE;
+
 		for (String attrib: attribs){
 			calculatePurity(attrib, instances);
 		}
