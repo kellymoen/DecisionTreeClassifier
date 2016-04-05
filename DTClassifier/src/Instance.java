@@ -27,7 +27,7 @@ public class Instance {
 			}
 		}
 	}
-	
+
 	public void print(){
 		if (outcome){
 			System.out.println(outcomes[0]);
@@ -35,9 +35,13 @@ public class Instance {
 			System.out.println(outcomes[1]);
 		}
 	}
-	
+
 	public boolean attribIsTrue(String attrib){
 		return attributes.get(attrib);
+	}
+
+	public boolean getOutcome(){
+		return outcome;
 	}
 
 }
