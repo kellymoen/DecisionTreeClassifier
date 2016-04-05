@@ -5,19 +5,28 @@ public class Classifier {
 
 	public Classifier() {
 		// Parse the dataset
-		dataset = Parser.scan("golf-training.dat");
+		dataset = Parser.scan("hepatitis-training.dat");
 		// For each attribute:
 		// Create list of instances where attrib is true
 		// Create list of instances where attrib is false
 		// Calculate purity
-		String[] attribs = dataset.getAttribs();
-		ArrayList<Instance> instances = dataset.getInstances();
+		DTreeNode root = buildTree(dataset.getInstances(), dataset.getAttribs());
+	}
+	
+	public DTreeNode buildTree(ArrayList<Instance> instances, ArrayList<String> attributes){
 		String bestAttrib = "";
 		double bestPurity = Double.MAX_VALUE;
-
-		for (String attrib: attribs){
-			calculatePurity(attrib, instances);
+		for (String attrib: attributes){
+			double thisPurity = calculatePurity(attrib, instances);
+			if (thisPurity < bestPurity) {
+				bestPurity = thisPurity;
+				bestAttrib = attrib;
+			} 
 		}
+		System.out.println(bestAttrib);
+		DTreeNode left = new DTreeNode("Dummy");
+		DTreeNode right = new DTreeNode("Dummy");
+		return null;
 	}
 
 	public ArrayList<Instance> getAttributeTrueInstances(String attribute, ArrayList<Instance> instances){

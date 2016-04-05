@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 
 public class Dataset {
-	String[] attribs;
-	public String[] getAttribs() {
+	ArrayList<String> attribs;
+	public ArrayList<String> getAttribs() {
 		return attribs;
 	}
 
@@ -17,7 +17,7 @@ public class Dataset {
 	String[] outcomes;
 	ArrayList<Instance> instances;
 	
-	public Dataset(String[] attribs, String[] outcomes, ArrayList<Instance> instances){
+	public Dataset(ArrayList<String> attribs, String[] outcomes, ArrayList<Instance> instances){
 		this.attribs = attribs;
 		this.outcomes = outcomes;
 		this.instances = instances;

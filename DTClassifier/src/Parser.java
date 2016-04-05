@@ -17,7 +17,11 @@ public class Parser {
 			String outcomesLine = sc.nextLine();
 			String attribsLine = sc.nextLine();
 			String[] outcomes = outcomesLine.split("\t");
-			String[] attribs = attribsLine.split("\t");
+			String[] attribSplit = attribsLine.split("\t");
+			ArrayList<String> attribs = new ArrayList<String>();
+			for (int i =0; i< attribSplit.length; i++){
+				attribs.add(attribSplit[i]);
+			}
 
 			while (sc.hasNext()) {
 				instances.add(new Instance(sc.nextLine(), outcomes, attribs));
