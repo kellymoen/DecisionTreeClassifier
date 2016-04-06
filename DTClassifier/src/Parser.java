@@ -13,7 +13,7 @@ public class Parser {
 	public static Dataset scan(String fileName) {
 		ArrayList<Instance> instances = new ArrayList<Instance>();
 		try {
-			Scanner sc = new Scanner(new File(System.getProperty("user.dir") + "/part2/" + fileName));
+			Scanner sc = new Scanner(new File(System.getProperty("user.dir") + "/" + fileName));
 			String outcomesLine = sc.nextLine();
 			String attribsLine = sc.nextLine();
 			String[] outcomes = outcomesLine.split("\t");
@@ -27,10 +27,6 @@ public class Parser {
 				instances.add(new Instance(sc.nextLine(), outcomes, attribs));
 			}
 			sc.close();
-			for (Instance i : instances) {
-				i.print();
-				System.out.println("");
-			}
 			return new Dataset(attribs, outcomes, instances);
 
 		} catch (FileNotFoundException e) {

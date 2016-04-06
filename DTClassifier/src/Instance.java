@@ -1,7 +1,5 @@
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
 import java.util.Scanner;
 
 public class Instance {
@@ -32,14 +30,7 @@ public class Instance {
 				attributes.put(attribs.get(i-1) , false);
 			}
 		}
-	}
-
-	public void print(){
-		if (outcome){
-			System.out.println(outcomes[0]);
-		} else {
-			System.out.println(outcomes[1]);
-		}
+		sc.close();
 	}
 
 	public boolean attribIsTrue(String attrib){
@@ -48,6 +39,14 @@ public class Instance {
 
 	public boolean getOutcome(){
 		return outcome;
+	}
+
+	public String getOutcomeString(){
+		if (outcome){
+			return outcomes[0];
+		} else {
+			return outcomes[1];
+		}
 	}
 
 }
